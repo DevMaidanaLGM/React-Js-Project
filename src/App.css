@@ -1,3 +1,26 @@
+
+.backgroundCustom{
+  background-color: #000000;
+  opacity: 1;
+  background-image:  repeating-radial-gradient( circle at 0 0, transparent 0, #000000 25px ), repeating-linear-gradient( #39205955, #392059 );
+}
+
+
+.container{
+  justify-content: center;
+  align-content: center;
+  margin-top: 40px;
+  margin-bottom: auto;
+  width: auto;
+  height: auto;
+  display: flex;
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+
+
+
 .App {
   text-align: center;
 }
