@@ -3,11 +3,12 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Home from './views/home';
 
 ReactDOM.render(
   <React.StrictMode>
     <div className="background">
-      <App />
+      <Home />
     </div>
   </React.StrictMode>,
   document.getElementById('root')
