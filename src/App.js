@@ -1,17 +1,34 @@
 import logo from './logo.svg';
 import './App.css';
-import About from './views/about';
-
+import Contact from './views/contact';
+import About from './views/about'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Container from 'react-bootstrap/container';
+import Row from 'react-bootstrap/row';
+import Col from 'react-bootstrap/col';
 
 function App() {
   return (
-      <div className="backgroundCustom">
-        <div className="container">
 
-          <About />
 
-        </div>
-      </div>
+<div>
+    <Container className="bg-black mainContainer" fluid>
+      <Row>
+        <Col>
+
+          <div>
+
+            <About />
+
+          </div>
+
+        </Col>
+      </Row>
+    </Container>
+</div>
+
+
+
   );
 }
 
