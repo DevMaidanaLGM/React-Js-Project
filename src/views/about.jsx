@@ -50,7 +50,7 @@ return(
 
       <div className="row d-flex justify-content-around border border-info">
 
-      <div className="col-12 col-lg-5 d-flex justify-content-center">>
+      <div className="col-12 col-lg-5 d-flex justify-content-center">
         <img className="w-75 m-3 imgBorded"src="./img/leonprofile.jpg" alt=""/>
       </div>
 
