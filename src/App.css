@@ -6,16 +6,11 @@
 }
 
 
-.container{
+.mainContainer{
   justify-content: center;
   align-content: center;
-  margin-top: 40px;
-  margin-bottom: auto;
-  width: auto;
-  height: auto;
   display: flex;
-  margin-left: 2%;
-  margin-right: 2%;
+
 }
 
 
