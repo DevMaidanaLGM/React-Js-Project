@@ -29,6 +29,7 @@ export default function Anime(){
                     <div>
                         <h1>{first.title}</h1>
                         <img src={first.image_url} alt={first.title} className="principal-image"/>
+                        <h3>Type: {first.type}</h3>
                         <h3>Episodes: {first.episodes}</h3>
                         <h3>Start Date: {first.start_date}</h3>
                         <h3>End Date: {first.end_date}</h3>
