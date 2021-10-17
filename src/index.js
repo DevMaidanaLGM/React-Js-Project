@@ -6,11 +6,14 @@ import reportWebVitals from './reportWebVitals';
 import Home from './views/home';
 import About from './views/about';
 import Contact from './views/contact';
+import { BrowserRouter as Router } from 'react-router-dom'
 
 ReactDOM.render(
   <React.StrictMode>
     <div className="background">
-      <Home />
+      <Router>
+        <Home />
+      </Router>
     </div>
   </React.StrictMode>,
   document.getElementById('root')
