@@ -1,29 +1,41 @@
 import React, { useEffect,useState } from 'react';
-
+import SideBar from '../partials/sideBar'
+import { Link } from 'react-router-dom';
 import './anime.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function Anime({animes}){
 
-
-    console.log(animes)
     const [first, setFirst] = useState('')
 
-    
     useEffect( () => {
         setFirst(animes[0])
     },[])
 
+    const [key,setKey] = useState(false)
+    
+    function filterSidebar(key){
+        // const list = animes
+        // if(key){
+        //     animes = list.filter((e) => e.type == key)
+        // }
+        console.log('estado',key)
+    }
 
     if(animes.length === 0){
         return (
             <>
-            <h1>Nada</h1>
+                <div className="w-100">
+                    <div className="container">
+                        <h1>Nothing here... :(</h1>
+                    </div>
+                </div>
             </>
         )
     }else{
         return (
             <div className="w-100">
+                <SideBar filterSidebar={filterSidebar}/>
                 {first && (
                     <div className="container">
                     <div className="first">
@@ -55,7 +67,9 @@ export default function Anime({animes}){
                         animes.map((anime) => {
                             return (
                                 <div className="card" onClick={ () => {setFirst(anime)}} key={anime.mal_id}>
-                                    <img src={anime.image_url} alt={anime.title} className="image"/>
+                                    <Link to={"animeDetail/" + anime.mal_id}>
+                                        <img src={anime.image_url} alt={anime.title} className="image"/>
+                                    </Link>
                                     <div className="title">{anime.title}</div>
                                 </div>
                             )

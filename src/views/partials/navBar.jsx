@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import { Image, Form, FormControl, Button, InputGroup, Container, Row, Col } from 'react-bootstrap';
 import '../styles/navbar.css';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 export default function NavBar(filter){
 
@@ -15,7 +16,9 @@ export default function NavBar(filter){
 
         <Container fluid className="mt-3">
             <Row className="navbar">
-                <Col className="text-center">Icon</Col>
+                <Col className="text-center">
+                    <Link to="/">Icon</Link>
+                </Col>
                 <Col>
                     <InputGroup className="mb-3">
                         <FormControl
@@ -28,7 +31,9 @@ export default function NavBar(filter){
                         <Button variant="outline-success" id="button-addon2" onClick={() => searchAnime()}>Button</Button>
                     </InputGroup>
                 </Col>
-                <Col className="text-center">About</Col>
+                <Col className="text-center">
+                    <Link to="/about">About</Link>
+                </Col>
             </Row>
         </Container>
     )
