@@ -51,7 +51,9 @@ export default function Anime({animes}){
                             <div className="container mt-5 w-100">
                                 <div className="row d-flex w-100">
                                     <div className="col-lg-5">
-                                        <a className="w-100 button_slide slide_right">More Info</a>
+                                        <Link to={"animeDetail/" + first.mal_id}>
+                                            <a className="w-100 button_slide slide_right">More Info</a>
+                                        </Link>
                                     </div>
                                     <div className="col-lg-7">
                                         <a className="w-100 button_slide slide_right" href={first.url} target="_blank">My Anime List</a>
@@ -67,9 +69,7 @@ export default function Anime({animes}){
                         animes.map((anime) => {
                             return (
                                 <div className="card" onClick={ () => {setFirst(anime)}} key={anime.mal_id}>
-                                    <Link to={"animeDetail/" + anime.mal_id}>
-                                        <img src={anime.image_url} alt={anime.title} className="image"/>
-                                    </Link>
+                                    <img src={anime.image_url} alt={anime.title} className="image"/>
                                     <div className="title">{anime.title}</div>
                                 </div>
                             )
