@@ -50,7 +50,11 @@ return(
 
       <div className="row d-flex justify-content-around border border-info">
 
+<<<<<<< HEAD
       <div className="col-12 col-lg-5 d-flex justify-content-center">>
+=======
+      <div className="col-12 col-lg-5 d-flex justify-content-center">
+>>>>>>> master
         <img className="w-75 m-3 imgBorded imgLeon"src="./img/leonprofile.jpg" alt=""/>
       </div>
 
