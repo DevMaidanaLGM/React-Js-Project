@@ -17,7 +17,9 @@ export default function NavBar(filter){
         <Container fluid className="mt-3">
             <Row className="navbar">
                 <Col className="text-center">
-                    <Link to="/">Icon</Link>
+                    <Link to="/">
+                      <img width="400" height="369" className="fluid" src="./img/giama_logo.png"></img>
+                    </Link>
                 </Col>
                 <Col>
                     <InputGroup className="mb-3">

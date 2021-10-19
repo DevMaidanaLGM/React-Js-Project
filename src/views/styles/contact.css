@@ -1,9 +1,14 @@
 .contactContainer{
+  margin-top: 5%;
   justify-content: center;
   align-content: center;
   display: flex;
-
+  padding-bottom: 10%;
 }
+
+hr { display: block; height: 1px;
+    border: 0; border-top: 1px solid #ccc;
+    margin: 1em 0; padding: 0; }
 
 .aboutContainer{
 padding-bottom: 15%;
@@ -13,7 +18,7 @@ padding-bottom: 15%;
   justify-content: center;
   align-items: center;
   border-radius: 5px;
-  border: 1px solid white;
+  border: 1px solid purple;
   padding-top: 50px;
   padding-bottom: 50px;
   padding-left: 10px;

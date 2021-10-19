@@ -4,6 +4,9 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './styles/contact.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { BrowserRouter as Router, Switch, Route, useHistory, Link } from 'react-router-dom';
+
+
 
 //Esta función verifica si el formulario está vació
 const isAnEmptyForm = ({senderName, email, subject, message }) => {
@@ -102,7 +105,7 @@ return errors;
 
 //Esta es la función principal
 export default function Contact(){
-
+ const history = useHistory();
 
 
   const [state, setState] = useState({
@@ -127,7 +130,12 @@ export default function Contact(){
             e.preventDefault();
             alert(`Email es ${state.email}`)
     }
+    function onCancelForm(e){
+      console.log("Cancelando...");
+      <Link to="/"></Link>
 
+
+    }
 
 
 //Función para manejar los cambios en cualquier campo
@@ -168,6 +176,7 @@ export default function Contact(){
   <div className="formContainer">
     <Form className="formCustom">
       <h1>Contact</h1>
+      <hr></hr>
       <div className="formGroup">
         <label>Name</label>
         <input
@@ -215,6 +224,8 @@ export default function Contact(){
         {fails.message ? <p style={{color: 'red'}}>{fails.message}</p> : <p></p>}
       </div>
       <button
+        onClick={() => history.push('/')}
+
         className=
           {
             hasFails(fails)==true ||
@@ -229,9 +240,12 @@ export default function Contact(){
         type="button"
         >Send Message</button>
         <button
+          onClick={() => history.push('/')}
           className="button_slide_red slide_right_red button_cancelBorder"
           type="button"
-          >Cancelar</button>
+          >Cancelar
+
+        </button>
     </Form>
 </div>
 
