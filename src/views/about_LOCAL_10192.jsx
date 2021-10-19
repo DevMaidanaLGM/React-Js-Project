@@ -29,7 +29,7 @@ return(
       			español como en inglés.
       		</p>
 
-          <div className="d-flex justify-content-center align-self-center" >
+          <div className="align-self-center d-flex justify-content-center " >
             <p className="text-justify contacts">
             GitHub: <a
               href="https://www.github.com/DevMaidanaLGM">@DevMaidanaLGM
@@ -50,8 +50,8 @@ return(
 
       <div className="row d-flex justify-content-around border border-info">
 
-      <div className="col-12 col-lg-5 d-flex justify-content-center">
-        <img className="w-75 m-3 imgBorded imgPablo"src="./img/leonprofile.jpg" alt=""/>
+      <div className="col-12 col-lg-5 d-flex justify-content-center">>
+        <img className="w-75 m-3 imgBorded imgLeon"src="./img/leonprofile.jpg" alt=""/>
       </div>
 
         <div class="col-12 col-lg-7 align-self-center">
@@ -74,7 +74,7 @@ return(
         			español como en inglés.
         		</p>
 
-            <div className="d-flex justify-content-center align-self-center" >
+            <div className="align-self-center d-flex justify-content-center " >
               <p className="text-justify contacts">
               GitHub: <a
                 href="https://www.github.com/DevMaidanaLGM">@DevMaidanaLGM
@@ -84,6 +84,7 @@ return(
                   </a> <br/>
               </p>
             </div>
+
         </div>
 
       </div>

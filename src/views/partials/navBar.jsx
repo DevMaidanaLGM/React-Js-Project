@@ -34,6 +34,9 @@ export default function NavBar(filter){
                 <Col className="text-center">
                     <Link to="/about">About</Link>
                 </Col>
+                <Col className="text-center">
+                    <Link to="/contact">Contact</Link>
+                </Col>
             </Row>
         </Container>
     )
