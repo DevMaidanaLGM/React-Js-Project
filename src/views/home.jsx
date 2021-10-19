@@ -7,6 +7,7 @@ import Axios from 'axios';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import About from './about';
 import Detail from './anime/detail';
+import Contact from './contact';
 
 export default function Home(){
 
@@ -55,6 +56,9 @@ export default function Home(){
                 {/* {animes && <Anime animes={animes}/>} */}
                 <Route exact path="/about">
                     <About/>
+                </Route>
+                <Route exact path="/contact">
+                    <Contact/>
                 </Route>
                 <Route exact path="/animeDetail/:id">
                     <Detail/>

@@ -7,13 +7,14 @@ import Home from './views/home';
 import About from './views/about';
 import Contact from './views/contact';
 import { BrowserRouter as Router } from 'react-router-dom'
-
+import Footer from './views/partials/footer'
 ReactDOM.render(
   <React.StrictMode>
     <div className="background">
       <Router>
         <Home />
-      </Router>
+        <Footer/>
+    </Router>
     </div>
   </React.StrictMode>,
   document.getElementById('root')
