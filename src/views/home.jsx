@@ -8,7 +8,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import About from './about';
 import Detail from './anime/detail';
 import Contact from './contact';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Home(){
 
     const [animes, setAnimes] = useState([]);
@@ -47,6 +47,7 @@ export default function Home(){
 
     return (
         <>
+        <div className="mx-4 my-4">
             <NavBar filter={filter} />
             <button onClick={() => getData(50)}>Show 50</button>
             <Switch>
@@ -65,6 +66,7 @@ export default function Home(){
                 </Route>
                 <Footer />
             </Switch>
+          </div>
         </>
     )
 }
