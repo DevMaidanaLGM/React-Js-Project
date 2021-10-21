@@ -1,0 +1,16 @@
+.appCopyright{
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 16px;
+  color:Gray;
+}
+
+
+.contacts{
+  color: gray;
+  font-style: italic;
+  font-size: 10px;
+}
+
+.contacts p,a {
+  margin-left: 20px;
+}

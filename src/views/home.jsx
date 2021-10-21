@@ -7,7 +7,8 @@ import Axios from 'axios';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import About from './about';
 import Detail from './anime/detail';
-
+import Contact from './contact';
+import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Home(){
 
     const [animes, setAnimes] = useState([]);
@@ -46,6 +47,7 @@ export default function Home(){
 
     return (
         <>
+        <div className="mx-4 my-4">
             <NavBar filter={filter} />
             <button onClick={() => getData(50)}>Show 50</button>
             <Switch>
@@ -56,11 +58,15 @@ export default function Home(){
                 <Route exact path="/about">
                     <About/>
                 </Route>
+                <Route exact path="/contact">
+                    <Contact/>
+                </Route>
                 <Route exact path="/animeDetail/:id">
                     <Detail/>
                 </Route>
                 <Footer />
             </Switch>
+          </div>
         </>
     )
 }
