@@ -50,7 +50,7 @@ export default function Home(){
             <button onClick={() => getData(50)}>Show 50</button>
             <Switch>
                 <Route exact path="/">
-                    {animes && <Anime  animes={(key) ? filter(animes) : animes} />}
+                    {animes && <Anime  lista={(key) ? filter(animes) : animes} />}
                 </Route>
                 {/* {animes && <Anime animes={animes}/>} */}
                 <Route exact path="/about">

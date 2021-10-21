@@ -28,7 +28,6 @@ return(
       			inglés es bastante bueno, así que puedes comunicarte conmigo tanto en
       			español como en inglés.
       		</p>
-
           <div className="align-self-center" >
             <p className="text-justify">
             GitHub: <a

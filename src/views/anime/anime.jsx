@@ -4,23 +4,51 @@ import { Link } from 'react-router-dom';
 import './anime.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function Anime({animes}){
+export default function Anime({lista}){
 
-    const [first, setFirst] = useState('')
+    const [animes, setAnimes] = useState(lista);
 
-    useEffect( () => {
-        setFirst(animes[0])
-    },[])
+    const [first, setFirst] = useState('');
 
-    const [key,setKey] = useState(false)
+    const [list, setList] = useState(lista);
+
+    
+    // const [key,setKey] = useState(false)
     
     function filterSidebar(key){
-        // const list = animes
-        // if(key){
-        //     animes = list.filter((e) => e.type == key)
-        // }
-        console.log('estado',key)
+        setList(lista)
+        if(key){
+            setAnimes(lista.filter((e) => e.type == key))
+            console.log(lista.filter((e) => e.type == key))
+        }else{
+            setAnimes(list)
+        }
     }
+
+    function sort(key){
+        console.log('sort anime component',key)
+        setList(lista)
+        if(key){
+            if(key == 'asc'){
+                setAnimes(lista.sort())
+                console.log(animes)
+
+            }else{
+                console.log('descendente')
+                setAnimes(lista.reverse())
+                console.log(animes)
+            }
+        }else{
+            setAnimes(list)
+        }
+    }
+
+    useEffect( () => {
+        setAnimes(lista.sort())
+        setFirst(lista[0])
+        setList(lista)
+    },[])
+
 
     if(animes.length === 0){
         return (
@@ -35,7 +63,7 @@ export default function Anime({animes}){
     }else{
         return (
             <div className="w-100">
-                <SideBar filterSidebar={filterSidebar}/>
+                <SideBar filterSidebar={filterSidebar} sort={sort} />
                 {first && (
                     <div className="container">
                     <div className="first">
