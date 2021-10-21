@@ -1,0 +1,85 @@
+$theme-colors: (
+  "primary": #7604d4,
+);
+
+
+.alternativeT{
+font-size: 20px;
+color: #303030;
+font-weight: normal;
+
+}
+
+.itemList{
+  font-size: 24px;
+  color: #0d5c7a;
+
+}
+
+.itemListLevelTwo{
+  font-size: 20px;
+  color: #0d5c7a;
+
+}
+
+.secondaryTitles{
+  font-size: 20px;
+  color:#5c5c5c;
+}
+
+.producers{
+  color:white;
+  font-size: 16px;
+  font-weight: normal;
+
+}
+
+.trailer{
+  width: 60%;
+  height: 600px;
+}
+
+.scoreDiv{
+  margin-top: 0;
+  padding: 0;
+  padding-top: 0;
+  border-bottom: 1px solid purple;
+  border-left: 1px solid purple;
+  border-right: 1px solid purple;
+}
+.scoreH{
+  margin-bottom: 0;
+}
+.score{
+  margin-top: 0;
+   font-family: 'Courier New', monospace;
+   font-weight: bold;
+   text-align: center;
+}
+
+.moreInfo{
+  margin-top: 20px;
+  color: #00ddff;
+  font-weight: bold;
+}
+
+.infoDetail{
+  color: white;
+  text-decoration: none;
+
+  font-style: normal;
+  font-weight: normal;
+}
+
+.imgDetail{
+  border-radius: 20px;
+  padding: 1%;
+  box-shadow: inset 0 0 0 0 #07e5f5;
+  -webkit-transition: ease-out 0.4s;
+  -moz-transition: ease-out 0.4s;
+  transition: ease-out 0.4s;
+
+}
+.imgDetail:hover{
+  box-shadow: inset 500px 0 0 0 #760299;
+}

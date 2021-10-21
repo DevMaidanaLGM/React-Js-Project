@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './styles/contact.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, useHistory, Link } from 'react-router-dom';
+import emailjs from 'emailjs-com';
+
 
 
 
@@ -105,6 +107,9 @@ return errors;
 
 //Esta es la función principal
 export default function Contact(){
+
+const form = useRef();
+
  const history = useHistory();
 
 
@@ -126,10 +131,10 @@ export default function Contact(){
     })
 
 //Función que de momento no se usa, es el submit
-    function onSubmitForm(e){
-            e.preventDefault();
-            alert(`Email es ${state.email}`)
-    }
+    // function onSubmitForm(e){
+    //         e.preventDefault();
+    //         alert(`Email es ${state.email}`)
+    // }
     function onCancelForm(e){
       console.log("Cancelando...");
       <Link to="/"></Link>
@@ -167,6 +172,20 @@ export default function Contact(){
 
 
 
+    const sendEmail = (e) => {
+        e.preventDefault();
+      console.log("A continuación, el objeto e");
+      console.log(e);
+      console.log("A continuación, el objeto e.target");
+      console.log(e.target);
+
+      // emailjs.sendForm('gmail', 'template_t193cfx', e.target, 'user_6353vRWp43LNLddKJSM0O')
+      //   .then((result) => {
+      //       console.log(result.text);
+      //   }, (error) => {
+      //       console.log(error.text);
+      //   });
+    }
 
 
   return(
@@ -174,7 +193,8 @@ export default function Contact(){
 
 <div className="contactContainer">
   <div className="formContainer">
-    <Form className="formCustom">
+    <Form className="formCustom"
+      ref={form} onSubmit={sendEmail}>
       <h1>Contact</h1>
       <hr></hr>
       <div className="formGroup">
@@ -224,8 +244,8 @@ export default function Contact(){
         {fails.message ? <p style={{color: 'red'}}>{fails.message}</p> : <p></p>}
       </div>
       <button
-        onClick={() => history.push('/')}
-
+        onClick={console.log("Click!")}
+        type="submit"
         className=
           {
             hasFails(fails)==true ||

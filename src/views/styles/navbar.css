@@ -1,4 +1,57 @@
-.navbar{
-    display: flex;
-    align-items: baseline;
+.navbarContainerCustom{
+  border: 1px solid purple;
+  border-radius: 20px;
+  justify-content: flex-end;
+
+}
+
+.logo{
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+
+
+}
+
+
+.linkCustom{
+
+  display: block;
+  font-size:24px;
+  color:#00ffb7;
+
+
+}
+
+
+.column {
+  vertical-align: center;
+}
+
+
+
+
+.columnImg{
+  height: auto;
+  border: 0;
+max-width: 100%;
+height: auto;
+display: inline-block;
+vertical-align: middle;
+}
+
+.searcher{
+  height: 40px;
+  width: 200px;
+  border-radius: 25px;
+  border: 0px;
+
+}
+
+.btnSearch{
+height: 40px;
+border-radius: 15px;
+align-content: center;
+justify-content: center;
+
 }
