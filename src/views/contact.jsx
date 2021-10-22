@@ -3,18 +3,20 @@ import { useState } from "react";
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import './styles/contact.css';
+import Alert from 'react-bootstrap/Alert';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, useHistory, Link } from 'react-router-dom';
 import emailjs from 'emailjs-com';
-
+import{ init } from 'emailjs-com';
+init("user_6353vRWp43LNLddKJSM0O");
 
 
 
 //Esta función verifica si el formulario está vació
 const isAnEmptyForm = ({senderName, email, subject, message }) => {
-console.log(senderName)
+console.log("Entrando a is An Empty Form: " + senderName, email, subject, message)
   let yesIsEmpty = false;
-  if (senderName === "" || email === "" || subject === ""  || message === "") {
+  if (senderName === "" && email === "" && subject === ""  && message === "") {
     yesIsEmpty = true;
   }else{
     yesIsEmpty = false;
@@ -22,6 +24,20 @@ console.log(senderName)
   console.log("Está vacío? " + yesIsEmpty)
   return yesIsEmpty;
 };
+
+const gotSomethingCheck = ({senderName, email, subject, message }) => {
+
+console.log("Entrando a got gotSomething: " + senderName, email, subject, message)
+    let everyFieldGotSomething = false;
+    if (senderName !== "" && email !== "" && subject !== ""  && message !== "") {
+      everyFieldGotSomething = true;
+    }else{
+      everyFieldGotSomething = false;
+    }
+    console.log("Tiene algo en cada campo? " + everyFieldGotSomething)
+    return everyFieldGotSomething;
+  };
+
 
 
 
@@ -108,7 +124,7 @@ return errors;
 //Esta es la función principal
 export default function Contact(){
 
-const form = useRef();
+
 
  const history = useHistory();
 
@@ -118,7 +134,6 @@ const form = useRef();
         email: '',
         subject: '',
         message: '',
-        isAnEmptyForm: true,
 
     })
 
@@ -136,7 +151,6 @@ const form = useRef();
     //         alert(`Email es ${state.email}`)
     // }
     function onCancelForm(e){
-      console.log("Cancelando...");
       <Link to="/"></Link>
 
 
@@ -146,12 +160,11 @@ const form = useRef();
 //Función para manejar los cambios en cualquier campo
     function onHandleChange(e){
 
- isAnEmptyForm: isAnEmptyForm(state)
- console.log("fallos abajo")
- console.log(fails.senderName)
- console.log(fails.email)
- console.log(fails.subject)
- console.log(fails.message)
+ // console.log("fallos abajo")
+ // console.log(fails.senderName)
+ // console.log(fails.email)
+ // console.log(fails.subject)
+ // console.log(fails.message)
 
             setState({
                 ...state,
@@ -166,25 +179,25 @@ const form = useRef();
                     [e.target.name]: e.target.value
                   },e.target.name, fails)
                 )
-
+console.log(state)
 
     }
 
 
 
-    const sendEmail = (e) => {
-        e.preventDefault();
-      console.log("A continuación, el objeto e");
+    function sendEmail(e){
+      console.log("Dentro del send Email()");
       console.log(e);
-      console.log("A continuación, el objeto e.target");
-      console.log(e.target);
 
-      // emailjs.sendForm('gmail', 'template_t193cfx', e.target, 'user_6353vRWp43LNLddKJSM0O')
-      //   .then((result) => {
-      //       console.log(result.text);
-      //   }, (error) => {
-      //       console.log(error.text);
-      //   });
+    e.preventDefault();
+      emailjs.sendForm('service_vkfoag8', 'template_t193cfx', e.target, 'user_6353vRWp43LNLddKJSM0O')
+        .then((result) => {
+            console.log(result.text);
+
+            //onClick={() => history.push('/')};
+        }, (error) => {
+            console.log(error.text);
+        });
     }
 
 
@@ -194,7 +207,7 @@ const form = useRef();
 <div className="contactContainer">
   <div className="formContainer">
     <Form className="formCustom"
-      ref={form} onSubmit={sendEmail}>
+      onSubmit={sendEmail}>
       <h1>Contact</h1>
       <hr></hr>
       <div className="formGroup">
@@ -244,21 +257,20 @@ const form = useRef();
         {fails.message ? <p style={{color: 'red'}}>{fails.message}</p> : <p></p>}
       </div>
       <button
-        onClick={console.log("Click!")}
         type="submit"
+        disabled={
+      hasFails(fails)===true || isAnEmptyForm(state)===true || gotSomethingCheck(state)===false
+      ? true : false }
         className=
           {
-            hasFails(fails)==true ||
-            isAnEmptyForm(state)==true
+            hasFails(fails)===true ||
+            isAnEmptyForm(state)===true ||
+            gotSomethingCheck(state)===false
             ? "disabbledButton" : "button_slide_purple slide_right"
 
           }
-        disabled={
-          hasFails(fails)==true || isAnEmptyForm(state)==true
-          ? true : false }
+         >Send Message</button>
 
-        type="button"
-        >Send Message</button>
         <button
           onClick={() => history.push('/')}
           className="button_slide_red slide_right_red button_cancelBorder"
