@@ -11,7 +11,7 @@ import Contact from './contact';
 import 'bootstrap/dist/css/bootstrap.min.css';
 export default function Home(){
 
-    const [animes, setAnimes] = useState([]);
+    const [lista, setLista] = useState([]);
 
     // const [list, setList] = useState([]);
 
@@ -22,13 +22,13 @@ export default function Home(){
     function filter(key){
         console.log(key)
         if(key){
-            const lista = animes.filter(anime => anime.title.includes(key))
-            setAnimes(lista)
-            console.log(animes)
+            const lista2 = lista.filter(anime => anime.title.includes(key))
+            setLista(lista2)
+            console.log(lista)
         }else{
             getData()
         }
-        console.log(animes)
+        console.log(lista)
     }
 
 
@@ -37,7 +37,7 @@ export default function Home(){
         Axios.get('https://api.jikan.moe/v3/top/anime/1')
             .then((info) => {
                 let array = info.data.top.slice(0,limit)
-                setAnimes(array)
+                setLista(array)
             })
             .catch((err) => {
                 console.log(err)
@@ -55,7 +55,7 @@ export default function Home(){
             <button onClick={() => getData(50)}>Show 50</button>
             <Switch>
                 <Route exact path="/">
-                    {animes && <Anime  lista={(key) ? filter(animes) : animes} />}
+                    {lista && <Anime  lista={(key) ? filter(lista) : lista} />}
                 </Route>
                 {/* {animes && <Anime animes={animes}/>} */}
                 <Route exact path="/about">

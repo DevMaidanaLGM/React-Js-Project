@@ -1,13 +1,13 @@
 import React from 'react';
 import '../styles/footer.css';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col,Container } from 'react-bootstrap';
 import { Facebook, Instagram, Linkedin } from 'react-bootstrap-icons';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 
 export default function Footer(){
 
     return (
-        <>
+        <Container fluid>
         <Row className="pt-3">
           <Col>
             <div className="bg-black appCopyright py-0 mt-0 shadow d-flex justify-content-evenly" >
@@ -28,15 +28,15 @@ export default function Footer(){
               </p>
               <p className="contacts mt-1">Pablo
                 <a
-                  href="https://www.facebook.com/MaxLGM">
+                  href="https://www.facebook.com/pablo.garcia.pr">
                   <Facebook width="12px" height="12px"/>
                 </a>
                 <a
-                  href="https://www.instagram.com/elhombreguiso/">
+                  href="https://www.instagram.com/pablo.garcia.22/">
                   <Instagram width="12px" height="12px"></Instagram>
                 </a>
                 <a
-                  href="https://www.linkedin.com/in/leonardo-maidana-1a2482223/">
+                  href="https://www.linkedin.com/in/pablo-garcia-jujuy/">
                   <Linkedin width="12px" height="12px"></Linkedin>
                 </a>
                    <br/>
@@ -55,6 +55,6 @@ export default function Footer(){
             </div>
           </Col>
         </Row>
-        </>
+        </Container>
     )
 }

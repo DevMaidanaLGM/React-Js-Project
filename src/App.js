@@ -1,6 +1,6 @@
-import logo from './logo.svg';
+
 import './App.css';
-import Contact from './views/contact';
+
 import About from './views/about'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Container from 'react-bootstrap/container';
