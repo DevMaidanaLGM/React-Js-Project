@@ -10,25 +10,24 @@ export default function Detail(){
     const params = useParams()
 
     useEffect( () => {
-        Axios.get('https://api.jikan.moe/v3/anime/'+params.id)
-            .then((info) => {
-                console.log(info.data)
-                setAnime(info.data)
-            })
-            .catch((err) => {
-                console.log(err)
-            })
+      Axios.get('https://api.jikan.moe/v3/anime/'+params.id)
+        .then((info) => {
+          setAnime(info.data)
+        })
+        .catch((err) => {
+            console.log(err)
+        })
     },[])
 
 
-function sliceDateFrom(){
-  console.log(anime.aired.from);
-    let emisionFrom = anime.aired.from.toString();
-    console.log("Emision from "+ emisionFrom);
-    console.log(emisionFrom.slice(0,7));
-    console.log("Emision from "+ emisionFrom);
-    return emisionFrom;
-}
+    function sliceDateFrom(){
+      console.log(anime.aired.from);
+      let emisionFrom = anime.aired.from.toString();
+      console.log("Emision from "+ emisionFrom);
+      console.log(emisionFrom.slice(0,7));
+      console.log("Emision from "+ emisionFrom);
+      return emisionFrom;
+    }
 
     return (
         anime ? (

@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from 'react';
 import SideBar from '../partials/sideBar'
 import { Link } from 'react-router-dom';
+import { Carousel } from 'react-bootstrap';
 import './anime.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -8,7 +9,7 @@ export default function Anime({lista}){
 
     const [animes, setAnimes] = useState(lista);
 
-    const [first, setFirst] = useState('');
+    // const [first, setFirst] = useState('');
 
     const [list, setList] = useState(lista);
 
@@ -18,8 +19,8 @@ export default function Anime({lista}){
     function filterSidebar(key){
         setList(lista)
         if(key){
-            setAnimes(lista.filter((e) => e.type == key))
-            console.log(lista.filter((e) => e.type == key))
+            setAnimes(lista.filter((e) => e.type === key))
+            console.log(lista.filter((e) => e.type === key))
         }else{
             setAnimes(list)
         }
@@ -45,7 +46,7 @@ export default function Anime({lista}){
 
     useEffect( () => {
         setAnimes(lista.sort())
-        setFirst(lista[0])
+        // setFirst(lista[0])
         setList(lista)
     },[])
 
@@ -161,7 +162,7 @@ export default function Anime({lista}){
 
             <div className="w-100">
                 <SideBar filterSidebar={filterSidebar} sort={sort} />
-                {first && (
+                {/* {first && (
                     <div className="container">
                     <div className="first">
                         <div>
@@ -188,15 +189,19 @@ export default function Anime({lista}){
                         </div>
                     </div>
                 </div>
-                )}
+                )} */}
                 <div className="container">
                     {
                         animes.map((anime) => {
                             return (
-                                <div className="card" onClick={ () => {setFirst(anime)}} key={anime.mal_id}>
+                                <Link to={"animeDetail/" + anime.mal_id} className="card" >
                                     <img src={anime.image_url} alt={anime.title} className="image"/>
                                     <div className="title">{anime.title}</div>
-                                </div>
+                                </Link>
+                                // <div className="card" onClick={ () => {setFirst(anime)}} key={anime.mal_id}>
+                                //     <img src={anime.image_url} alt={anime.title} className="image"/>
+                                //     <div className="title">{anime.title}</div>
+                                // </div>
                             )
                         })
                     }

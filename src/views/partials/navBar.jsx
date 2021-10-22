@@ -8,35 +8,24 @@ export default function NavBar(filter){
     const [input, setInput] = useState('')
 
     function searchAnime(){
-        // console.log(input)
+        console.log(input)
         filter.filter(input)
     }
 
     return (
-
-
-
-
-
-
         <Container fluid className="w-100 justify-content-center d-flex align-items-center">
-
-  <Row className=" col-12 col-lg-4">
-          <Link to="/">
-            <img className="logo" width="200"src="./img/giama_logo.png"></img>
-          </Link>
-    </Row>
+            <Row className=" col-12 col-lg-4">
+                <Link to="/">
+                    <img className="logo" width="200"src="./img/giama_logo.png"></img>
+                </Link>
+            </Row>
             <Row className="navbar navbarContainerCustom col-12 col-lg-8">
-
                 <Col className="text-center column">
-
-                    <Link className="linkCustom" to="/about">About
-                    </Link>
+                    <Link className="linkCustom" to="/about">About</Link>
                 </Col>
                 <Col className="text-center column">
                     <Link className="linkCustom" to="/contact">Contact</Link>
                 </Col>
-
                 <Col>
                     <InputGroup>
                         <FormControl
@@ -48,11 +37,11 @@ export default function NavBar(filter){
                             onChange={(e) => setInput(e.target.value)}
                         />
                         <Button
-                          className="btnSearch"
-                          variant="outline-success"
-                          id="button-addon2"
-                          onClick={() => searchAnime()}>
-                          <Search height="auto" color="royalblue" />
+                            className="btnSearch"
+                            variant="outline-success"
+                            id="button-addon2"
+                            onClick={() => searchAnime()}>
+                            <Search height="auto" color="royalblue" />
                         </Button>
                     </InputGroup>
                 </Col>

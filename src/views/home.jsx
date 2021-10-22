@@ -20,12 +20,15 @@ export default function Home(){
     // const [limit,setLimit] = useState(20);
 
     function filter(key){
+        console.log(key)
         if(key){
-            setAnimes(animes.filter(anime => anime.title.includes(key)))
+            const lista = animes.filter(anime => anime.title.includes(key))
+            setAnimes(lista)
+            console.log(animes)
         }else{
             getData()
         }
-        // console.log(animes)
+        console.log(animes)
     }
 
 
