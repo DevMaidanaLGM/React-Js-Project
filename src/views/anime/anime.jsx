@@ -31,34 +31,34 @@ export default function Anime({lista}){
     }
 
     function sort(key){
-
-        console.log('sort anime component',key)
+        
+        // console.log('sort anime component',key)
         setList(animes)
         if(key){
             setKey(key)
             if(key == 'asc'){
-                animes.sort(function(a,b) {
-                    return 1
-                })
-                setAnimes(animes)
+                setAnimes( animes.sort(function (a,b){
+                    if(a.title > b.title) return 1
+                    else if(a.title < b.title) return -1
+                    else return 0
+                }))
                 console.log(animes)
             }else{
-                console.log('descendente')
-                animes.sort(function(a,b){
+                // console.log('descendente')
+                setAnimes( animes.sort(function (a,b){
                     return -1
-                })
-                setAnimes(animes)
+                }))
                 console.log(animes)
             }
         }else{
-            animes.sort(function(a,b){
-                return 0
-            })
-            // setList(list)
-            setAnimes(animes)
+            setAnimes(list)
             setKey(false)
         }
     }
+
+    useEffect( () => {
+        
+    })
 
     useEffect( () => {
         setAnimes(lista)
