@@ -193,8 +193,7 @@ console.log(state)
       emailjs.sendForm('service_vkfoag8', 'template_t193cfx', e.target, 'user_6353vRWp43LNLddKJSM0O')
         .then((result) => {
             console.log(result.text);
-
-            //onClick={() => history.push('/')};
+            history.push('/home');
         }, (error) => {
             console.log(error.text);
         });
@@ -272,7 +271,7 @@ console.log(state)
          >Send Message</button>
 
         <button
-          onClick={() => history.push('/')}
+          onClick={() => history.push('/home')}
           className="button_slide_red slide_right_red button_cancelBorder"
           type="button"
           >Cancelar
