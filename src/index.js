@@ -6,15 +6,16 @@ import reportWebVitals from './reportWebVitals';
 import Home from './views/home';
 import About from './views/about';
 import Contact from './views/contact';
+import LandingPage from './views/landingPage';
 import { BrowserRouter as Router } from 'react-router-dom'
 import Footer from './views/partials/footer'
 ReactDOM.render(
   <React.StrictMode>
     <div className="background">
         <Router>
-          <Home />
-        <Footer/>
-      </Router>
+          <Home/>
+          <Footer/>
+        </Router>
     </div>
   </React.StrictMode>,
   document.getElementById('root')

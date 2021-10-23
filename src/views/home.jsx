@@ -3,6 +3,7 @@ import NavBar from './partials/navBar';
 // import SideBar from './partials/sideBar';
 import Footer from './partials/footer';
 import Anime from './anime/anime';
+import LandingPage from './landingPage';
 import Axios from 'axios';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import About from './about';
@@ -93,11 +94,18 @@ export default function Home(){
     return (
         <>
         <div className="mx-4 my-4">
-            <NavBar filter={filter} />
+            
 
             <Switch>
-                <Route exact path="/">
+                <Route exact path="/home">
+                    <NavBar filter={filter} />
                     {lista && <Anime  lista={(key) ? filter(lista) : lista} />}
+                    <div className="row d-flex justify-content-center ">
+                        <button className="col-12 col-lg-12 showMeMore" onClick={() => showmeMore()}>Show me more!</button>
+                    </div>
+                </Route>
+                <Route exact path="/">
+                    <LandingPage />
                 </Route>
                 {/* {animes && <Anime animes={animes}/>} */}
                 <Route exact path="/about">
@@ -112,10 +120,7 @@ export default function Home(){
 
 
             </Switch>
-            <div className="row d-flex justify-content-center ">
-            <button className="col-12 col-lg-12 showMeMore" onClick={() => showmeMore()}>Show me more!
-            </button>
-            </div>
+            
           </div>
         </>
     )
