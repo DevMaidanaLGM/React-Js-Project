@@ -101,7 +101,7 @@ export default function Home(){
                     <NavBar filter={filter} />
                     {lista && <Anime  lista={(key) ? filter(lista) : lista} />}
                     <div className="row d-flex justify-content-center ">
-                        <button className="col-12 col-lg-12 showMeMore" onClick={() => showmeMore()}>Show me more!</button>
+                        <button className="showMeMore" onClick={() => showmeMore()}>Show me more!</button>
                     </div>
                 </Route>
                 <Route exact path="/">
