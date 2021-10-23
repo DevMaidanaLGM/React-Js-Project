@@ -14,7 +14,7 @@ ReactDOM.render(
         <Router>
           <Home />
         <Footer/>
-    </Router>
+      </Router>
     </div>
   </React.StrictMode>,
   document.getElementById('root')

@@ -1,0 +1,18 @@
+.sidebar{
+    position: fixed;
+    right: 10px;
+    z-index: 99;
+    width: auto;
+    top: 200px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid purple;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: black;
+    /* justify-content: flex-end; */
+}
+.form-check-input:checked{
+    background-color: #00ffb7;
+    border-color:#00ffb7;
+}
