@@ -3,6 +3,10 @@ import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/about.css';
 import Pdf from '../documents/cv_leon.pdf';
+import { GitHub, Gmail } from 'react-bootstrap-icons';
+
+
+
 export default function About(){
 
 return(
@@ -30,10 +34,10 @@ return(
            Si quieres saber más te dejo<a className="cvHere"
            href = {Pdf} target = "_blank"> aquí mi CV</a> donde puedes ver más
            ampliamente mi perfil profesional y las tecnologías que manejo.
-           <br/><br/>
+
       		</p>
-          <div className="align-self-center" >
-            <p className="text-justify">
+          <div className="d-flex justify-content-center align-self-center" >
+            <p className="text-justify contacts">
             GitHub: <a
               href="https://www.github.com/DevMaidanaLGM">@DevMaidanaLGM
               </a> <br/>

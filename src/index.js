@@ -11,8 +11,8 @@ import Footer from './views/partials/footer'
 ReactDOM.render(
   <React.StrictMode>
     <div className="background">
-      <Router>
-        <Home />
+        <Router>
+          <Home />
         <Footer/>
     </Router>
     </div>
