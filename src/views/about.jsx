@@ -58,7 +58,7 @@ return(
       <div className="row d-flex justify-content-around border border-info">
 
       <div className="col-12 col-lg-4 d-flex justify-content-center">
-        <img className="w-100 h-100 align-self-center  imgBorded imgPablo"src="./img/pabloprofile.jpg" alt=""/>
+        <img className="w-100 h-75 align-self-center  imgBorded imgPablo"src="./img/pabloprofile.jpg" alt=""/>
       </div>
 
         <div class="col-12 col-lg-8 align-self-center">

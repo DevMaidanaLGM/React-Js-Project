@@ -31,7 +31,7 @@ export default function Anime({lista}){
     }
 
     function sort(key){
-        
+
         // console.log('sort anime component',key)
         setList(animes)
         if(key){
@@ -57,7 +57,7 @@ export default function Anime({lista}){
     }
 
     useEffect( () => {
-        
+
     })
 
     useEffect( () => {
@@ -72,9 +72,9 @@ export default function Anime({lista}){
     if(animes.length === 0){
         return (
             <>
-                <div className="w-100">
+                <div className="d-flex  justify-content-center align-items-center">
                     <div className="container">
-                        <h1>Nothing here... :(</h1>
+                          <img src="./img/404.png" alt="404"/>
                     </div>
                 </div>
             </>
@@ -104,7 +104,7 @@ export default function Anime({lista}){
                   <div className="container mt-5 w-100">
                       <div className="row d-flex w-100">
                           <div className="col-lg-5">
-                              <Link to={"animeDetail/" + animes[0].mal_id} className="w-75 button_slide slide_right">
+                              <Link to={"animeDetail/" + animes[0].mal_id} className="w-100 button_slide slide_right">
                                   More Info
                               </Link>
                           </div>
@@ -133,7 +133,7 @@ export default function Anime({lista}){
                   <div className="container mt-5 w-100">
                       <div className="row d-flex w-100">
                           <div className="col-lg-5">
-                              <Link to={"animeDetail/" + animes[1].mal_id} className="w-75 button_slide slide_right">
+                              <Link to={"animeDetail/" + animes[1].mal_id} className="w-100 button_slide slide_right">
                                   More Info
                               </Link>
                           </div>
@@ -162,7 +162,7 @@ export default function Anime({lista}){
                   <div className="container mt-5 w-100">
                       <div className="row d-flex w-100">
                           <div className="col-lg-5">
-                              <Link to={"animeDetail/" + animes[1].mal_id} className="w-75 button_slide slide_right">
+                              <Link to={"animeDetail/" + animes[1].mal_id} className="w-100 button_slide slide_right">
                                   More Info
                               </Link>
                           </div>
