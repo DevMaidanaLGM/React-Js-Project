@@ -109,12 +109,15 @@ export default function Home(){
                 </Route>
                 {/* {animes && <Anime animes={animes}/>} */}
                 <Route exact path="/about">
+                    <NavBar filter={filter} />
                     <About/>
                 </Route>
                 <Route exact path="/contact">
+                    <NavBar filter={filter} />
                     <Contact/>
                 </Route>
                 <Route exact path="/animeDetail/:id">
+                    <NavBar filter={filter} />
                     <Detail/>
                 </Route>
 

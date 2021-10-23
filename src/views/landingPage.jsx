@@ -23,7 +23,7 @@ export default function landingPage(){
 
             <Row className="">
               <Col className="col-12 col-lg-2">
-                  <Link className="linkCustom" to="/contact">Home</Link>
+                  <Link className="linkCustom" to="/home">Home</Link>
               </Col>
               <Col className="col-12 col-lg-8">
                 <Link to="/">
