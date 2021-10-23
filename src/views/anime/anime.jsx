@@ -15,11 +15,11 @@ export default function Anime({lista}){
 
     const [list, setList] = useState(animes);
 
-    
+
     // const [key,setKey] = useState(false)
-    
+
     function filterSidebar(key){
-        
+
         if(key){
             setKey(key)
             setAnimes(lista.filter((e) => e.type === key))
@@ -31,7 +31,7 @@ export default function Anime({lista}){
     }
 
     function sort(key){
-        
+
         console.log('sort anime component',key)
         setList(animes)
         if(key){
@@ -90,7 +90,7 @@ export default function Anime({lista}){
       <Carousel.Item interval={1000}>
         <div className="row d-flex justify-content-center px-5">
           <div className="col-12 col-lg-5 d-flex justify-content-center">
-  
+
               <div>
                   <img src={animes[0].image_url} alt={animes[0].title} className="principal-image"/>
               </div>
@@ -119,7 +119,7 @@ export default function Anime({lista}){
       <Carousel.Item interval={500}>
         <div className="row d-flex justify-content-center px-5">
           <div className="col-12 col-lg-5 d-flex justify-content-center">
-  
+
               <div>
                   <img src={animes[1].image_url} alt={animes[1].title} className="principal-image"/>
               </div>
@@ -148,7 +148,7 @@ export default function Anime({lista}){
       <Carousel.Item>
         <div className="row d-flex justify-content-center px-5">
           <div className="col-12 col-lg-5 d-flex justify-content-center">
-  
+
               <div>
                   <img src={animes[2].image_url} alt={animes[2].title} className="principal-image"/>
               </div>

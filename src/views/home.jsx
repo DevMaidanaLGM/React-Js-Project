@@ -8,7 +8,10 @@ import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import About from './about';
 import Detail from './anime/detail';
 import Contact from './contact';
+import './styles/home.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+
 export default function Home(){
 
     const [lista, setLista] = useState([]);
@@ -31,6 +34,45 @@ export default function Home(){
         console.log(lista)
     }
 
+    function showmeMore(){
+
+      let i;
+
+      if (lista.length<50){
+        getData(50);
+      }else{
+
+        i = (lista.length/50)+1;
+
+
+        Axios.get('https://api.jikan.moe/v3/top/anime/'+i)
+            .then((info) => {
+                let array = info.data.top;
+                array=lista.concat(array);
+                setLista(array)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+      }
+    }
+
+
+    function filter(animeToSearch){
+      let apiUrl = 'https://api.jikan.moe/v3/search/anime?q='+ animeToSearch
+      console.log(apiUrl)
+      Axios.get(apiUrl)
+          .then((info) => {
+            let array = info.data.results
+            console.log(info.data.results)
+              setLista(array)
+          })
+          .catch((err) => {
+              console.log(err)
+          })
+    }
+
+
 
     function getData(limit){
         limit = limit ? limit : 20
@@ -52,7 +94,7 @@ export default function Home(){
         <>
         <div className="mx-4 my-4">
             <NavBar filter={filter} />
-            <button onClick={() => getData(50)}>Show 50</button>
+
             <Switch>
                 <Route exact path="/">
                     {lista && <Anime  lista={(key) ? filter(lista) : lista} />}
@@ -67,8 +109,13 @@ export default function Home(){
                 <Route exact path="/animeDetail/:id">
                     <Detail/>
                 </Route>
-                <Footer />
+
+
             </Switch>
+            <div className="row d-flex justify-content-center ">
+            <button className="col-12 col-lg-12 showMeMore" onClick={() => showmeMore()}>Show me more!
+            </button>
+            </div>
           </div>
         </>
     )
