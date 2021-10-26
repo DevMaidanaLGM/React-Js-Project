@@ -8,7 +8,7 @@ export default function Footer(){
 
     return (
         <Container fluid>
-        <Row className="pt-3">
+        <Row className="pt-5">
           <Col>
             <div className="bg-black appCopyright py-0 mt-0 shadow d-flex justify-content-evenly" >
               <p className="contacts mt-1">Leonardo

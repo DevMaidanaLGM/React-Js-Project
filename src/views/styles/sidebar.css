@@ -2,17 +2,34 @@
     position: fixed;
     right: 10px;
     z-index: 99;
-    width: auto;
+    margin: 0px;
+    padding: 0px;
     top: 200px;
     display: flex;
     flex-direction: column;
     border: 1px solid purple;
     border-radius: 20px;
     padding: 20px;
-    background-color: black;
+    background-color:rgba(0, 0, 0, 0.2);
     /* justify-content: flex-end; */
 }
 .form-check-input:checked{
     background-color: #00ffb7;
     border-color:#00ffb7;
+}
+.sideBarSelect{
+  background-color:rgba(0, 0, 0, 0.2);
+  width: 12vh;
+  padding: 0;
+  margin: 0;
+  color: #00ffb7;
+  font-family: 'Courier New', monospace;
+  padding-left: 4px;
+}
+option{
+    background-color:rgba(0, 0, 0, 1);
+      font-family: 'Courier New', monospace;
+      color:#b700ff;
+
+
 }

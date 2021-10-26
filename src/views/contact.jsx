@@ -8,7 +8,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter as Router, Switch, Route, useHistory, Link } from 'react-router-dom';
 import emailjs from 'emailjs-com';
 import{ init } from 'emailjs-com';
+import swal from 'sweetalert';
+
 init("user_6353vRWp43LNLddKJSM0O");
+
+
+
 
 
 
@@ -25,6 +30,8 @@ console.log("Entrando a is An Empty Form: " + senderName, email, subject, messag
   return yesIsEmpty;
 };
 
+
+//Esta función verifica que cada campo tenga un valor
 const gotSomethingCheck = ({senderName, email, subject, message }) => {
 
 console.log("Entrando a got gotSomething: " + senderName, email, subject, message)
@@ -42,7 +49,7 @@ console.log("Entrando a got gotSomething: " + senderName, email, subject, messag
 
 
 
-//Esta devuelve si es que existen errores
+//Esta función comprueba si es que existen errores en el formulario
 const hasFails = ({senderName, email, subject, message })=>{
 let yeshasFails = false;
 
@@ -60,6 +67,10 @@ let yeshasFails = false;
   return yeshasFails;
 };
 
+
+
+
+//Esta función valida los formularios
 export function validate(input, targetName, fails){
     let errors = fails
 
@@ -125,7 +136,7 @@ return errors;
 export default function Contact(){
 
 
-
+//Se hace uso del historial para las redirecciones
  const history = useHistory();
 
 
@@ -190,12 +201,35 @@ console.log(state)
       console.log(e);
 
     e.preventDefault();
-      emailjs.sendForm('service_vkfoag8', 'template_t193cfx', e.target, 'user_6353vRWp43LNLddKJSM0O')
+
+    emailjs.sendForm('service_vkfoag8', 'template_t193cfx', e.target, 'user_6353vRWp43LNLddKJSM0O')
         .then((result) => {
             console.log(result.text);
+
+            swal({
+              title: "Your message has been send!",
+              text: "We will respond to you soon! uwu",
+              icon: "success",
+              button: "uwu",
+            }).then((value) => {
             history.push('/home');
+            });
+
+
+
+
         }, (error) => {
             console.log(error.text);
+
+            swal({
+              title: "Something goes wrong...",
+              text: "Try again later... unu",
+              icon: "danger",
+              button: "unu",
+            }).then((value) => {
+            history.push('/home');
+            });
+
         });
     }
 

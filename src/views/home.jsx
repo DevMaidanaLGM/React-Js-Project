@@ -23,17 +23,17 @@ export default function Home(){
 
     // const [limit,setLimit] = useState(20);
 
-    function filter(key){
-        console.log(key)
-        if(key){
-            const lista2 = lista.filter(anime => anime.title.includes(key))
-            setLista(lista2)
-            console.log(lista)
-        }else{
-            getData()
-        }
-        console.log(lista)
-    }
+    // function filter(key){
+    //     console.log(key)
+    //     if(key){
+    //         const lista2 = lista.filter(anime => anime.title.includes(key))
+    //         setLista(lista2)
+    //         console.log(lista)
+    //     }else{
+    //         getData()
+    //     }
+    //     console.log(lista)
+    // }
 
     function showmeMore(){
 
@@ -50,7 +50,8 @@ export default function Home(){
             .then((info) => {
                 let array = info.data.top;
                 array=lista.concat(array);
-                setLista(array)
+                setLista(array);
+                
             })
             .catch((err) => {
                 console.log(err)
@@ -94,7 +95,7 @@ export default function Home(){
     return (
         <>
         <div className="mx-4 my-4">
-            
+
 
             <Switch>
                 <Route exact path="/home">
@@ -120,10 +121,19 @@ export default function Home(){
                     <NavBar filter={filter} />
                     <Detail/>
                 </Route>
+                <Route>
+                  <div className="d-column  justify-content-center align-items-center">
+                      <div className="container d-flex flex-column  justify-content-center align-items-center">
+                            <img className="h-50 w-50" src="./img/404.png" alt="404"/>
+                            <Link className="showMeMore align-items-center" to="/">Okay, take me back</Link>
+
+                      </div>
+                  </div>
+                </Route>
 
 
             </Switch>
-            
+
           </div>
         </>
     )

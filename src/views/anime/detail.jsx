@@ -34,16 +34,20 @@ export default function Detail(){
             <>
             <div className="detailMainContainer inline-block justify-content-center">
                 <div className="row d-flex justify-content-center border border-info mx-2 my-2 py-5 px-2">
-              <div className="col-12 col-lg-4 d-flex justify-content-center">
-                <Col>
+              <div className="col-12 col-lg-4 col-sm-12 d-flex justify-content-center">
 
-                <div className="align-items-center">
+
+
+                <Col className="col align-self-center" >
+                  <Row className="d-flex justify-content-center">
+
                   <img
-                    src={anime.image_url} className="principal-image imgDetail"/>
+                    src={anime.image_url} className="principal-image imgDetail align-self-center "/>
+                  </Row>
                   <h6 className="text-center scoreH">Score</h6>
                   <p className="score">{anime.score}</p>
 
-                  </div>
+
                   <h6 className="alternativeT text-center">
                     Alternative Titles
                   </h6>
@@ -72,12 +76,12 @@ export default function Detail(){
 
                     From:
                     <a className="infoDetail">
-                        {anime.aired.from.slice(0,7)}
+                        {anime.aired.from.slice(0,10)}
 
                     </a>
                      &emsp;To
                      <a className="infoDetail">
-                         {anime.aired.to.slice(0,7)}
+                         {anime.aired.to.slice(0,10)}
                      </a>
                   </p>
 

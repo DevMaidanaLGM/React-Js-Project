@@ -1,0 +1,15 @@
+.goLink{
+    display: block;
+    font-size: 30px;
+    color:#00ffb7;
+    font-weight: bolder;
+
+  }
+
+  .goLink:hover{
+    color: #8e0dff;
+    transform: scale(1.5);
+    position: inherit;
+    z-index: 33;
+    transition-duration: 0.6s;
+  }

@@ -73,8 +73,8 @@ export default function Anime({lista}){
         return (
             <>
                 <div className="d-flex  justify-content-center align-items-center">
-                    <div className="container">
-                          <img src="./img/404.png" alt="404"/>
+                    <div className="container d-flex  justify-content-center align-items-center">
+                          <img className="h-50 w-50" src="./img/404.png" alt="404"/>
                     </div>
                 </div>
             </>
@@ -86,37 +86,35 @@ export default function Anime({lista}){
 
 
   {!key && (
-      <Carousel>
-      <Carousel.Item interval={1000}>
+      <Carousel className="py-4 px-4 mx-4 my-2">
+      <Carousel.Item interval={6000}>
         <div className="row d-flex justify-content-center px-5">
           <div className="col-12 col-lg-5 d-flex justify-content-center">
 
-              <div>
                   <img src={animes[0].image_url} alt={animes[0].title} className="principal-image"/>
-              </div>
             </div>
               <div className="col-12 col-lg-7 d-flex flex-column ">
                   <h1>{animes[0].title}</h1>
                   <h3>Type: {animes[0].type}</h3>
                   <h3>Episodes: {animes[0].episodes}</h3>
-                  <h3>Start Date: {animes[0].start_date}</h3>
-                  <h3>End Date: {animes[0].end_date}</h3>
+                  <h3>Start Date: {animes[0].start_date.slice(0,10)}</h3>
+                  <h3>End Date: {animes[0].end_date.slice(0,10)}</h3>
                   <div className="container mt-5 w-100">
                       <div className="row d-flex w-100">
-                          <div className="col-lg-5">
+                          <div className="col-lg-6">
                               <Link to={"animeDetail/" + animes[0].mal_id} className="w-100 button_slide slide_right">
                                   More Info
                               </Link>
                           </div>
-                          <div className="col-lg-7">
-                              <a className="w-75 button_slide slide_right" href={animes[0].url} target="_blank">My Anime List</a>
+                          <div className="col-lg-6">
+                              <a className="w-100 button_slide slide_right" href={animes[0].url} target="_blank">My Anime List</a>
                           </div>
                       </div>
                   </div>
               </div>
           </div>
       </Carousel.Item>
-      <Carousel.Item interval={500}>
+      <Carousel.Item interval={6000}>
         <div className="row d-flex justify-content-center px-5">
           <div className="col-12 col-lg-5 d-flex justify-content-center">
 
@@ -128,24 +126,24 @@ export default function Anime({lista}){
                   <h1>{animes[1].title}</h1>
                   <h3>Type: {animes[1].type}</h3>
                   <h3>Episodes: {animes[1].episodes}</h3>
-                  <h3>Start Date: {animes[1].start_date}</h3>
-                  <h3>End Date: {animes[1].end_date}</h3>
+                  <h3>Start Date: {animes[1].start_date.slice(0,10)}</h3>
+                  <h3>End Date: {animes[1].end_date.slice(0,10)}</h3>
                   <div className="container mt-5 w-100">
                       <div className="row d-flex w-100">
-                          <div className="col-lg-5">
+                          <div className="col-lg-6">
                               <Link to={"animeDetail/" + animes[1].mal_id} className="w-100 button_slide slide_right">
                                   More Info
                               </Link>
                           </div>
-                          <div className="col-lg-7">
-                              <a className="w-75 button_slide slide_right" href={animes[1].url} target="_blank">My Anime List</a>
+                          <div className="col-lg-6">
+                              <a className="w-100 button_slide slide_right" href={animes[1].url} target="_blank">My Anime List</a>
                           </div>
                       </div>
                   </div>
               </div>
           </div>
       </Carousel.Item>
-      <Carousel.Item>
+      <Carousel.Item interval={6000}>
         <div className="row d-flex justify-content-center px-5">
           <div className="col-12 col-lg-5 d-flex justify-content-center">
 
@@ -157,17 +155,17 @@ export default function Anime({lista}){
                   <h1>{animes[2].title}</h1>
                   <h3>Type: {animes[2].type}</h3>
                   <h3>Episodes: {animes[2].episodes}</h3>
-                  <h3>Start Date: {animes[2].start_date}</h3>
-                  <h3>End Date: {animes[2].end_date}</h3>
+                  <h3>Start Date: {animes[2].start_date.slice(0,10)}</h3>
+                  <h3>End Date: {animes[2].end_date.slice(0,10)}</h3>
                   <div className="container mt-5 w-100">
                       <div className="row d-flex w-100">
-                          <div className="col-lg-5">
+                          <div className="col-lg-6">
                               <Link to={"animeDetail/" + animes[1].mal_id} className="w-100 button_slide slide_right">
                                   More Info
                               </Link>
                           </div>
-                          <div className="col-lg-7">
-                              <a className="w-75 button_slide slide_right" href={animes[2].url} target="_blank">My Anime List</a>
+                          <div className="col-lg-6">
+                              <a className="w-100 button_slide slide_right" href={animes[2].url} target="_blank">My Anime List</a>
                           </div>
                       </div>
                   </div>
