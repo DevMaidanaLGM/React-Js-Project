@@ -14,7 +14,7 @@ export default function SideBar({filterSidebar,sort}){
     }
 
     function handleSort(e){
-        
+
         if(e.target.value){
             sort(e.target.value)
         }else{
@@ -28,7 +28,7 @@ export default function SideBar({filterSidebar,sort}){
         <div className="sidebar">
             <h5>Filters</h5>
             <br/>
-            <Form.Select aria-label="Select Type" onChange={handleChange}>
+            <Form.Select className="sideBarSelect" aria-label="Select Type" onChange={handleChange}>
                 <option value="TV">Type</option>
                 <option value="TV">TV</option>
                 <option value="Movie">Movie</option>
@@ -37,7 +37,7 @@ export default function SideBar({filterSidebar,sort}){
             <br/>
             <Form.Check
                 type="radio"
-                label="Asc"
+                label="A - Z"
                 name="sort"
                 value="asc"
                 id="asc"
@@ -47,7 +47,7 @@ export default function SideBar({filterSidebar,sort}){
             <br/>
             <Form.Check
                 type="radio"
-                label="Desc"
+                label="Z - A"
                 name="sort"
                 value="desc"
                 id="desc"
