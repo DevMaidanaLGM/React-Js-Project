@@ -83,7 +83,7 @@ return(
                 English isn't my strongest but I can understand and
                 communicate. Almost all good tech docs are published
                 in Englis so... It's very important
-      <br/>
+      <br/><br/>
                 Te dejo mi Github y mi correo por si quieres comunicarte
                  conmigo. Espero te guste nuestro proyecto, nos vemos!
         		</p>
