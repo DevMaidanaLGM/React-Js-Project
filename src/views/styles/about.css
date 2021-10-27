@@ -44,3 +44,9 @@ margin: 0;
 padding: 0;
 color: purple;  
 }
+.link{
+  cursor: pointer;
+}
+.link:hover{
+  color: #0dcaf0;
+}

@@ -3,11 +3,15 @@ import { useState } from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './styles/about.css';
 import Pdf from '../documents/cv_leon.pdf';
-import { GitHub, Gmail } from 'react-bootstrap-icons';
+import { Github, EnvelopeFill } from 'react-bootstrap-icons';
 
 
 
 export default function About(){
+
+  function goTo(uri){
+    window.open(uri,"_blank")
+  }
 
 return(
   <div>
@@ -36,15 +40,9 @@ return(
            ampliamente mi perfil profesional y las tecnologías que manejo.
 
       		</p>
-          <div className="d-flex justify-content-center align-self-center" >
-            <p className="text-justify contacts">
-            GitHub: <a
-              href="https://www.github.com/DevMaidanaLGM">@DevMaidanaLGM
-              </a> <br/>
-              Correo: <a
-                href="contact">Dev.MaidanaLGM@Gmail.com
-                </a> <br/>
-            </p>
+          <div className="d-flex justify-content-evenly align-self-center mb-3" >
+            <Github width="30px" height="30px" className="link" onClick={() => goTo('https://www.github.com/DevMaidanaLGM')} />
+            <EnvelopeFill width="30px" height="30px" className="link" onClick={() => goTo('mailto:dev.maidanalgm@gmail.com')} />
           </div>
 
         </div>
@@ -90,15 +88,9 @@ return(
                  conmigo. Espero te guste nuestro proyecto, nos vemos!
         		</p>
 
-            <div className="d-flex justify-content-center align-self-center" >
-              <p className="text-justify contacts">
-              GitHub: <a
-                href="https://github.com/pablogarcia77">@pablogarcia77
-                </a> <br/>
-                Correo: <a
-                  href="contact">pablogarcia77@hotmail.com.ar
-                  </a> <br/>
-              </p>
+            <div className="d-flex justify-content-evenly align-self-center mb-3" >
+              <Github width="30px" height="30px" className="link" onClick={() => goTo('https://www.github.com/pablogarcia77')} />
+              <EnvelopeFill width="30px" height="30px" className="link" onClick={() => goTo('mailto:pablogarcia77@hotmail.com.ar')} />
             </div>
         </div>
 
