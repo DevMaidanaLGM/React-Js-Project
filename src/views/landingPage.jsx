@@ -13,12 +13,12 @@ export default function landingPage(){
 
     return (
       <>
-        <Container fluid className="d-flex align-items-center pt-4">
-                  <Link className="goLink align-items-center" to="/home">Home</Link>
-                <Link to="/">
-                    <img className="logo w-100 fluid align-items-center"src="./img/giama_logo.png"></img>
-                </Link>
-                  <Link className="goLink align-items-center" to="/about">About</Link>
+        <Container fluid className="d-flex align-items-center pt-4 justify-content-evenly">
+          <Link className="goLink align-items-center" to="/home">Home</Link>
+          <Link to="/">
+            <img className="logo w-100 fluid align-items-center"src="./img/giama_logo.png"></img>
+          </Link>
+          <Link className="goLink align-items-center" to="/about">About</Link>
         </Container>
       </>
     )

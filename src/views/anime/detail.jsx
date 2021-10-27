@@ -140,7 +140,10 @@ export default function Detail(){
         )
         :
         (
-            <h1>Loading...</h1>
+            <div className="d-flex flex-column justify-content-center align-items-center mt-5">
+              <img src="../img/loading.gif" width="200px"/>
+              <h1>Loading...</h1>
+            </div>
         )
     )
 }
