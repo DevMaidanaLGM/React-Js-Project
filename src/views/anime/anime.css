@@ -7,6 +7,7 @@
     margin: 1rem auto;
     cursor: pointer;
     /* z-index: 0; */
+    color:#00ffb7;
 }
 .card:hover{
     transform: scale(1.3);

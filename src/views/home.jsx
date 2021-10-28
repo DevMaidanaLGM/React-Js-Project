@@ -96,55 +96,51 @@ export default function Home(){
 
     return (
         <>
-        <div className="mx-4 my-4">
-
-
-            <Switch>
-                <Route exact path="/home">
-                    <NavBar filter={filter} />
-                    {lista && <Anime  lista={(key) ? filter(lista) : lista} />}
-                    <div className="row d-flex justify-content-center ">
-                        <button className="showMeMore" onClick={() => showmeMore()}>Show me more!</button>
-                    </div>
-                </Route>
-                <Route exact path="/">
-                    <LandingPage />
-                </Route>
-                {/* {animes && <Anime animes={animes}/>} */}
-                <Route exact path="/about">
-                    <NavBar filter={filter} />
-                    <About/>
-                </Route>
-                <Route exact path="/characters/:id">
-                    <NavBar filter={filter} />
-                    <Character />
-                </Route>
-                <Route exact path="/pictures/:id">
-                    <NavBar filter={filter} />
-                    <Picture />
-                </Route>
-                <Route exact path="/contact">
-                    <NavBar filter={filter} />
-                    <Contact/>
-                </Route>
-                <Route exact path="/animeDetail/:id">
-                    <NavBar filter={filter} />
-                    <Detail/>
-                </Route>
-                <Route>
-                  <div className="d-column  justify-content-center align-items-center">
-                      <div className="container d-flex flex-column  justify-content-center align-items-center">
-                            <img className="h-50 w-50" src="./img/404.png" alt="404"/>
-                            <Link className="showMeMore align-items-center" to="/">Okay, take me back</Link>
-
-                      </div>
-                  </div>
-                </Route>
-
-
-            </Switch>
-
-          </div>
+            <div className="mx-4 my-4">
+                <Switch>
+                    <Route exact path="/home">
+                        <NavBar filter={filter} />
+                        {lista && <Anime  lista={(key) ? filter(lista) : lista} />}
+                        {lista.length != 0 && 
+                            <div className="row d-flex justify-content-center ">
+                                <button className="showMeMore" onClick={() => showmeMore()}>Show me more!</button>
+                            </div>
+                        }
+                    </Route>
+                    <Route exact path="/">
+                        <LandingPage />
+                    </Route>
+                    {/* {animes && <Anime animes={animes}/>} */}
+                    <Route exact path="/about">
+                        <NavBar filter={filter} />
+                        <About/>
+                    </Route>
+                    <Route exact path="/characters/:id">
+                        <NavBar filter={filter} />
+                        <Character />
+                    </Route>
+                    <Route exact path="/pictures/:id">
+                        <NavBar filter={filter} />
+                        <Picture />
+                    </Route>
+                    <Route exact path="/contact">
+                        <NavBar filter={filter} />
+                        <Contact/>
+                    </Route>
+                    <Route exact path="/animeDetail/:id">
+                        <NavBar filter={filter} />
+                        <Detail/>
+                    </Route>
+                    <Route>
+                        <div className="d-column  justify-content-center align-items-center">
+                            <div className="container d-flex flex-column  justify-content-center align-items-center">
+                                <img className="h-50 w-50" src="./img/404.png" alt="404"/>
+                                <Link className="showMeMore align-items-center" to="/">Okay, take me back</Link>
+                            </div>
+                        </div>
+                    </Route>
+                </Switch>
+            </div>
         </>
     )
 }
