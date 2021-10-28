@@ -40,6 +40,11 @@ export default function Chart({id}){
     const options = {
         maintainAspectRatio: true,
         responsive: true,
+        plugins: {
+            legend: {
+                display: false
+            },
+        },
         scales: {
             r: {
                 gridLines: {
@@ -51,7 +56,10 @@ export default function Chart({id}){
                 grid: {
                     color: 'rgba(255,255,255,1)',
                 },
-                beginAtZero: true
+                beginAtZero: true,
+                ticks: {
+                    display: false
+                }
             },
         },
     }
