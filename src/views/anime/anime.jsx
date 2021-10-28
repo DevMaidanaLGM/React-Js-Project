@@ -101,12 +101,12 @@ export default function Anime({lista}){
                   <h3>End Date: {animes[0].end_date.slice(0,10)}</h3>
                   <div className="container mt-5 w-100">
                       <div className="row d-flex w-100">
-                          <div className="col-lg-4">
+                          <div className="col-lg-6 col-xxl-4">
                               <Link to={"animeDetail/" + animes[0].mal_id} className="w-100 button_slide slide_right">
                                   More Info
                               </Link>
                           </div>
-                          <div className="col-lg-4">
+                          <div className="col-lg-6 col-xxl-4">
                               <a className="w-100 button_slide slide_right" href={animes[0].url} target="_blank">My Anime List</a>
                           </div>
                       </div>
@@ -130,12 +130,12 @@ export default function Anime({lista}){
                   <h3>End Date: {animes[1].end_date.slice(0,10)}</h3>
                   <div className="container mt-5 w-100">
                       <div className="row d-flex w-100">
-                          <div className="col-lg-4">
+                          <div className="col-lg-6 col-xxl-4">
                               <Link to={"animeDetail/" + animes[1].mal_id} className="w-100 button_slide slide_right">
                                   More Info
                               </Link>
                           </div>
-                          <div className="col-lg-4">
+                          <div className="col-lg-6 col-xxl-4">
                               <a className="w-100 button_slide slide_right" href={animes[1].url} target="_blank">My Anime List</a>
                           </div>
                       </div>
@@ -159,12 +159,12 @@ export default function Anime({lista}){
                   <h3>End Date: {animes[2].end_date.slice(0,10)}</h3>
                   <div className="container mt-5 w-100">
                       <div className="row d-flex w-100">
-                          <div className="col-lg-4">
+                          <div className="col-lg-6 col-xxl-4">
                               <Link to={"animeDetail/" + animes[1].mal_id} className="w-100 button_slide slide_right">
                                   More Info
                               </Link>
                           </div>
-                          <div className="col-lg-4">
+                          <div className="col-lg-6 col-xxl-4">
                               <a className="w-100 button_slide slide_right" href={animes[2].url} target="_blank">My Anime List</a>
                           </div>
                       </div>
