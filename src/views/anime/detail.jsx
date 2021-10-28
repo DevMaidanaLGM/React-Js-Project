@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router";
 import { Link } from "react-router-dom";
+import Chart from "../charts/radar";
 import Axios from 'axios';
 import { Image, Form, FormControl, Button, InputGroup, Container, Row, Col } from 'react-bootstrap';
 import '../styles/anime/detail.css';
@@ -48,7 +49,7 @@ export default function Detail(){
                   </Row>
                   <h6 className="text-center scoreH">Score</h6>
                   <p className="score">{anime.score}</p>
-
+                  <Chart id={anime.mal_id}/>
 
                   <h6 className="alternativeT text-center">
                     Alternative Titles
@@ -126,15 +127,20 @@ export default function Detail(){
                   </h5>
 
                   <Row className="justify-content-md-center mt-5">
-                    <Col xs lg="4">
+                    <Col xs lg="3">
                       <Link to={"/characters/" + anime.mal_id} className="w-100 button_slide slide_right">
                         Characters
                       </Link>
                     </Col>
-                    <Col xs lg="4">
+                    <Col xs lg="3">
                       <Link to={"/pictures/" + anime.mal_id} className="w-100 button_slide slide_right">
                         Pictures
                       </Link>
+                    </Col>
+                    <Col xs lg="3">
+                      <a className="w-100 button_slide slide_right" href={anime.url} target="_blank">
+                        My Anime List
+                      </a>
                     </Col>
                   </Row>
 
