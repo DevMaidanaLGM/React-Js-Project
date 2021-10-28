@@ -3,7 +3,9 @@ import NavBar from './partials/navBar';
 // import SideBar from './partials/sideBar';
 import Footer from './partials/footer';
 import Anime from './anime/anime';
+import Character from './characters/character';
 import LandingPage from './landingPage';
+import Picture from './pictures/pictures';
 import Axios from 'axios';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import About from './about';
@@ -112,6 +114,14 @@ export default function Home(){
                 <Route exact path="/about">
                     <NavBar filter={filter} />
                     <About/>
+                </Route>
+                <Route exact path="/characters/:id">
+                    <NavBar filter={filter} />
+                    <Character />
+                </Route>
+                <Route exact path="/pictures/:id">
+                    <NavBar filter={filter} />
+                    <Picture />
                 </Route>
                 <Route exact path="/contact">
                     <NavBar filter={filter} />

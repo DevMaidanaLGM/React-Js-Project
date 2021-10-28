@@ -1,0 +1,16 @@
+.card-picture{
+    height: 20rem;
+    overflow: hidden;
+    border: solid 1px purple;
+    display: flex;
+    background-color: black;
+    justify-content: center;
+    align-items: center;
+}
+.card-picture:hover{
+    transform: scale(1.1);
+}
+.card-picture > img{
+    height: auto;
+    width: 100%;
+}

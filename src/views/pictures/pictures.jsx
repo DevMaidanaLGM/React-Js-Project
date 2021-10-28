@@ -2,19 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from "react-router";
 import Axios from 'axios';
 import { Image, Card, Container, Row, Col } from 'react-bootstrap';
-import './character.css';
+import './pictures.css';
 
-export default function Character(){
+export default function Picture(){
 
-    const [characters, setCharacters] = useState([])
+    const [pictures, setPictures] = useState([])
 
     const params = useParams()
 
     useEffect( () => {
-      Axios.get('https://api.jikan.moe/v3/anime/'+params.id+'/characters_staff')
+      Axios.get('https://api.jikan.moe/v3/anime/'+params.id+'/pictures')
         .then((info) => {
-          setCharacters(info.data.characters)
-          console.log(characters)
+          setPictures(info.data.pictures)
+          console.log(pictures)
         })
         .catch((err) => {
             console.log(err)
@@ -26,18 +26,15 @@ export default function Character(){
     }
 
     return (
-        (characters.length !=0) ? (
+        (pictures.length !=0) ? (
             <Container>
                 <Row>
                     {
-                        characters.map((character) => {
+                        pictures.map((picture) => {
                             return (
-                                <Col key={character.mal_id}>
-                                    <Card className="card-character" onClick={() => goTo(character.url)}>
-                                        <Card.Img variant="top" src={character.image_url}/>
-                                        <Card.Body>
-                                            <Card.Title>{character.name}</Card.Title>
-                                        </Card.Body>
+                                <Col key={picture.small}>
+                                    <Card className="card-picture">
+                                        <Card.Img variant="top" src={picture.large}/>
                                     </Card>
                                 </Col>
                             )

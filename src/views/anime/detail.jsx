@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from "react-router";
+import { Link } from "react-router-dom";
 import Axios from 'axios';
 import { Image, Form, FormControl, Button, InputGroup, Container, Row, Col } from 'react-bootstrap';
 import '../styles/anime/detail.css';
@@ -13,6 +14,7 @@ export default function Detail(){
       Axios.get('https://api.jikan.moe/v3/anime/'+params.id)
         .then((info) => {
           setAnime(info.data)
+          console.log(anime)
         })
         .catch((err) => {
             console.log(err)
@@ -123,7 +125,18 @@ export default function Detail(){
                   }
                   </h5>
 
-
+                  <Row className="justify-content-md-center mt-5">
+                    <Col xs lg="4">
+                      <Link to={"/characters/" + anime.mal_id} className="w-100 button_slide slide_right">
+                        Characters
+                      </Link>
+                    </Col>
+                    <Col xs lg="4">
+                      <Link to={"/pictures/" + anime.mal_id} className="w-100 button_slide slide_right">
+                        Pictures
+                      </Link>
+                    </Col>
+                  </Row>
 
                   </Col>
 
