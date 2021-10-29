@@ -87,7 +87,7 @@ export default function Anime({lista}){
 
   {!key && (
       <Carousel className="py-4 px-4 mx-4 my-2">
-      <Carousel.Item interval={6000}>
+      <Carousel.Item interval={2000}>
         <div className="row d-flex justify-content-center px-5">
           <div className="col-12 col-lg-4 d-flex justify-content-center">
 
@@ -114,7 +114,7 @@ export default function Anime({lista}){
               </div>
           </div>
       </Carousel.Item>
-      <Carousel.Item interval={6000}>
+      <Carousel.Item interval={2000}>
         <div className="row d-flex justify-content-center px-5">
           <div className="col-12 col-lg-4 d-flex justify-content-center">
 
@@ -143,7 +143,7 @@ export default function Anime({lista}){
               </div>
           </div>
       </Carousel.Item>
-      <Carousel.Item interval={6000}>
+      <Carousel.Item interval={2000}>
         <div className="row d-flex justify-content-center px-5">
           <div className="col-12 col-lg-4 d-flex justify-content-center">
 

@@ -72,13 +72,13 @@ export default function Detail(){
                         </a>
                         &emsp;
                         {anime.aired.to!=null ? (<>To
-                        
+
                           <a className="infoDetail">
                           {anime.aired.to.slice(0,10)}
                         </a></>
                         ):(<></>)}
-                        
-                      </p>                      
+
+                      </p>
                     </Col>
                   </div>
                   <div className="col-12 col-lg-8 d-flex">
@@ -123,7 +123,7 @@ export default function Detail(){
                               Pictures
                             </Link>
                           </Col>
-                          <Col xs="12" md="12" lg="4">
+                          <Col xs="12" md="12" lg="5">
                             <a className="w-100 button_slide slide_right" href={anime.url} target="_blank">
                               My Anime List
                             </a>
