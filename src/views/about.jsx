@@ -17,13 +17,13 @@ return(
   <div>
     <div className ="container">
       <div className="row d-flex justify-content-center border border-info">
-        <div className="col-12 col-lg-7 align-self-center">
+        <div className="col-12 col-lg-8 align-self-center">
 
 
-      		<h1 class="display-4 text-primary text-center">Maidana Leonardo G.M.</h1>
+      		<h1 class="display-4 text-primary text-center mt-2">Maidana Leonardo G.M.</h1>
 
 
-      		<p class="lead text-secondary m-2">
+      		<p class="lead text-secondary ms-2">
       			Hola, soy Leonardo, mucho gusto de conocerte! <br/><br/>
 
       			Tengo 24 años y soy un recién graduado de la carrera
@@ -40,14 +40,16 @@ return(
            ampliamente mi perfil profesional y las tecnologías que manejo.
 
       		</p>
-          <div className="d-flex justify-content-evenly align-self-center mb-3" >
+          <div className="d-flex justify-content-center align-self-center my-3 mb-3" >
             <Github width="30px" height="30px" className="link" onClick={() => goTo('https://www.github.com/DevMaidanaLGM')} />
+            <a onClick={() => goTo('https://www.github.com/DevMaidanaLGM')} className="ms-1 me-4">@DevMaidanaLGM</a>
             <EnvelopeFill width="30px" height="30px" className="link" onClick={() => goTo('mailto:dev.maidanalgm@gmail.com')} />
+            <a onClick={() => goTo('mailto:dev.maidanalgm@gmail.com')} className="ms-1 me-4">dev.maidanalgm@gmail.com</a>
           </div>
 
         </div>
-        <div className="col-12 col-lg-5 d-flex justify-content-center">
-          <img className="w-75 h-80 align-self-center imgBorded imgLeon"src="./img/leonprofile.jpg" alt=""/>
+        <div className="col-12 col-lg-4 d-flex justify-content-center">
+          <img className="w-100 h-80 align-self-center imgBorded imgLeon"src="./img/leonprofile.jpg" alt=""/>
         </div>
       </div>
 
@@ -62,7 +64,7 @@ return(
         <div class="col-12 col-lg-8 align-self-center">
 
 
-          <h1 class="display-4 text-primary">García Pablo</h1>
+          <h1 class="display-4 text-primary  mt-2">García Pablo</h1>
 
 
         		<p class="lead text-secondary me-2">
@@ -88,9 +90,11 @@ return(
                  conmigo. Espero te guste nuestro proyecto, nos vemos!
         		</p>
 
-            <div className="d-flex justify-content-evenly align-self-center mb-3" >
+            <div className="d-flex justify-content-center align-self-center mb-3" >
               <Github width="30px" height="30px" className="link" onClick={() => goTo('https://www.github.com/pablogarcia77')} />
+              <a onClick={() => goTo('https://www.github.com/DevMaidanaLGM')} className="ms-1 me-4">@pablogarcia77</a>
               <EnvelopeFill width="30px" height="30px" className="link" onClick={() => goTo('mailto:pablogarcia77@hotmail.com.ar')} />
+              <a onClick={() => goTo('https://www.github.com/DevMaidanaLGM')} className="ms-1 me-4">pablogarcia77@hotmail.com.ar</a>
             </div>
         </div>
 
