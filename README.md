@@ -1,18 +1,37 @@
-#GIAMA - Give Me Information About My Anime
+# GIAMA - Give Me Information About My Anime
 
 ![index](./public/img/index.png)
 
 This is a Web App that shows information about the top ranking animes (OVA, Movies or TV) and any anime of your interest.
 
-![home](./public/img/home.png)
+## Home
 
+![home](./public/img/home.png)
 
 ![home2](./public/img/home2.png)
 
+
+
+## Anime Details
+
 ![detail](./public/img/detail.png)
+
 ![detail2](./public/img/detail2.png)
+
+
+
+## Contact
+
+This is a controlled form, the "send message" button will not be enabled until all the fields are validated correctly.
+
 ![contact](./public/img/contact.png)
+
+## About
+
 ![about](./public/img/about.png)
+
+![about2](./public/img/about2.png)
+
 
 
 
