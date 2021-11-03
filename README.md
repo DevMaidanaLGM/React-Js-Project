@@ -1,3 +1,21 @@
+#GIAMA - Give Me Information About My Anime
+
+![index](./public/img/index.png)
+
+This is a Web App that shows information about the top ranking animes (OVA, Movies or TV) and any anime of your interest.
+
+![home](./public/img/home.png)
+
+
+![home2](./public/img/home2.png)
+
+![detail](./public/img/detail.png)
+![detail2](./public/img/detail2.png)
+![contact](./public/img/contact.png)
+![about](./public/img/about.png)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
