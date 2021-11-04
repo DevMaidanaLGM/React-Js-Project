@@ -15,7 +15,6 @@ export default function Detail(){
       Axios.get('https://api.jikan.moe/v3/anime/'+params.id)
         .then((info) => {
           setAnime(info.data)
-          console.log(anime)
         })
         .catch((err) => {
             console.log(err)
@@ -24,11 +23,7 @@ export default function Detail(){
 
 
     function sliceDateFrom(){
-      console.log(anime.aired.from);
       let emisionFrom = anime.aired.from.toString();
-      console.log("Emision from "+ emisionFrom);
-      console.log(emisionFrom.slice(0,7));
-      console.log("Emision from "+ emisionFrom);
       return emisionFrom;
     }
 

@@ -9,14 +9,10 @@ export default function Anime({lista}){
 
     const [animes, setAnimes] = useState([]);
 
-    // const [first, setFirst] = useState('');
 
     const [key, setKey] = useState('')
 
     const [list, setList] = useState(animes);
-
-
-    // const [key,setKey] = useState(false)
 
     function filterSidebar(key){
 
@@ -32,7 +28,6 @@ export default function Anime({lista}){
 
     function sort(key){
 
-        // console.log('sort anime component',key)
         setList(animes)
         if(key){
             setKey(key)
@@ -44,11 +39,9 @@ export default function Anime({lista}){
                 }))
                 console.log(animes)
             }else{
-                // console.log('descendente')
                 setAnimes( animes.sort(function (a,b){
                     return -1
                 }))
-                console.log(animes)
             }
         }else{
             setAnimes(list)
@@ -62,10 +55,6 @@ export default function Anime({lista}){
 
     useEffect( () => {
         setAnimes(lista)
-        // setList(animes.sort())
-        // setFirst(animes[0])
-        // setList(animes)
-        console.log(animes)
     },[lista])
 
 

@@ -18,30 +18,28 @@ init("user_6353vRWp43LNLddKJSM0O");
 
 
 //Esta función verifica si el formulario está vació
+//This function check if the form is empty, if it is empty return true
 const isAnEmptyForm = ({senderName, email, subject, message }) => {
-console.log("Entrando a is An Empty Form: " + senderName, email, subject, message)
   let yesIsEmpty = false;
   if (senderName === "" && email === "" && subject === ""  && message === "") {
     yesIsEmpty = true;
   }else{
     yesIsEmpty = false;
   }
-  console.log("Está vacío? " + yesIsEmpty)
   return yesIsEmpty;
 };
 
 
 //Esta función verifica que cada campo tenga un valor
+//This funcition check if each field has a value
 const gotSomethingCheck = ({senderName, email, subject, message }) => {
 
-console.log("Entrando a got gotSomething: " + senderName, email, subject, message)
     let everyFieldGotSomething = false;
     if (senderName !== "" && email !== "" && subject !== ""  && message !== "") {
       everyFieldGotSomething = true;
     }else{
       everyFieldGotSomething = false;
     }
-    console.log("Tiene algo en cada campo? " + everyFieldGotSomething)
     return everyFieldGotSomething;
   };
 
@@ -50,6 +48,7 @@ console.log("Entrando a got gotSomething: " + senderName, email, subject, messag
 
 
 //Esta función comprueba si es que existen errores en el formulario
+//This function check if there errors in the form
 const hasFails = ({senderName, email, subject, message })=>{
 let yeshasFails = false;
 
@@ -62,8 +61,6 @@ let yeshasFails = false;
   }else{
     yeshasFails =false;
   }
-  console.log(senderName,email,subject,message)
-  console.log("Tiene errores? " + yeshasFails)
   return yeshasFails;
 };
 
@@ -71,11 +68,11 @@ let yeshasFails = false;
 
 
 //Esta función valida los formularios
+//This is the main validation form function, if it has errors, add a field in the fails array
+
 export function validate(input, targetName, fails){
     let errors = fails
 
-console.log("Arreglo de errores abajo: ")
-console.log(errors)
 
 switch(targetName){
   case "senderName":
@@ -133,10 +130,12 @@ return errors;
 }
 
 //Esta es la función principal
+//This is the main function of contact
 export default function Contact(){
 
 
 //Se hace uso del historial para las redirecciones
+//We use the history to make the redirections
  const history = useHistory();
 
 
@@ -156,11 +155,7 @@ export default function Contact(){
 
     })
 
-//Función que de momento no se usa, es el submit
-    // function onSubmitForm(e){
-    //         e.preventDefault();
-    //         alert(`Email es ${state.email}`)
-    // }
+
     function onCancelForm(e){
       <Link to="/"></Link>
 
@@ -169,13 +164,10 @@ export default function Contact(){
 
 
 //Función para manejar los cambios en cualquier campo
+
+
     function onHandleChange(e){
 
- // console.log("fallos abajo")
- // console.log(fails.senderName)
- // console.log(fails.email)
- // console.log(fails.subject)
- // console.log(fails.message)
 
             setState({
                 ...state,
@@ -190,16 +182,13 @@ export default function Contact(){
                     [e.target.name]: e.target.value
                   },e.target.name, fails)
                 )
-console.log(state)
 
     }
 
 
 
     function sendEmail(e){
-      console.log("Dentro del send Email()");
-      console.log(e);
-
+/**This is the function that sends an email using emailJs */
     e.preventDefault();
 
     emailjs.sendForm('service_vkfoag8', 'template_t193cfx', e.target, 'user_6353vRWp43LNLddKJSM0O')
@@ -317,5 +306,4 @@ console.log(state)
     </div>
 </>
   )
-// 3888443159
 }
