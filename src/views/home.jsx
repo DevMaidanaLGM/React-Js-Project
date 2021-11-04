@@ -19,26 +19,19 @@ export default function Home(){
 
     const [lista, setLista] = useState([]);
 
-    // const [list, setList] = useState([]);
-
     const [key, setKey] = useState('');
-
-    // const [limit,setLimit] = useState(20);
-
-    // function filter(key){
-    //     console.log(key)
-    //     if(key){
-    //         const lista2 = lista.filter(anime => anime.title.includes(key))
-    //         setLista(lista2)
-    //         console.log(lista)
-    //     }else{
-    //         getData()
-    //     }
-    //     console.log(lista)
-    // }
 
     function showmeMore(){
 
+        /** 
+         * This is the method to show more animes
+         * 
+         * This validate how much animes are in the main array 
+         * The main array has 20 cards, so if you call this method for fist time 
+         * the main array would be of 50 cards
+         * 
+         * Then everytime it will add 50 cards because the jikan API bring us 50 cards per call
+        */
       let i;
 
       if (lista.length<50){
@@ -63,12 +56,15 @@ export default function Home(){
 
 
     function filter(animeToSearch){
+
+        /** This is a method that search for an specific anime
+         * 
+         */
       let apiUrl = 'https://api.jikan.moe/v3/search/anime?q='+ animeToSearch
       console.log(apiUrl)
       Axios.get(apiUrl)
           .then((info) => {
             let array = info.data.results
-            console.log(info.data.results)
               setLista(array)
           })
           .catch((err) => {
@@ -79,6 +75,7 @@ export default function Home(){
 
 
     function getData(limit){
+        /**This method is the first fill of the main array, it shows the quantity of cards that you choose (limit).  */
         limit = limit ? limit : 20
         Axios.get('https://api.jikan.moe/v3/top/anime/1')
             .then((info) => {
@@ -110,7 +107,6 @@ export default function Home(){
                     <Route exact path="/">
                         <LandingPage />
                     </Route>
-                    {/* {animes && <Anime animes={animes}/>} */}
                     <Route exact path="/about">
                         <NavBar filter={filter} />
                         <About/>
