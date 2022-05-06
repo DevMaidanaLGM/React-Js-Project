@@ -87,7 +87,7 @@ export default function Anime({lista}){
                   <h3>Type: {animes[0].type}</h3>
                   <h3>Episodes: {animes[0].episodes}</h3>
                   <h3>Start Date: {animes[0].start_date.slice(0,10)}</h3>
-                  <h3>End Date: {animes[0].end_date.slice(0,10)}</h3>
+                  <h3>End Date: {animes[0].end_date ? animes[0].end_date.slice(0,10) : null}</h3>
                   <div className="container mt-5 w-100">
                       <div className="row d-flex w-100">
                           <div className="col-lg-6 col-xxl-4">
@@ -116,7 +116,7 @@ export default function Anime({lista}){
                   <h3>Type: {animes[1].type}</h3>
                   <h3>Episodes: {animes[1].episodes}</h3>
                   <h3>Start Date: {animes[1].start_date.slice(0,10)}</h3>
-                  <h3>End Date: {animes[1].end_date.slice(0,10)}</h3>
+                  <h3>End Date: {animes[1].end_date ? animes[0].end_date.slice(0,10) : null}</h3>
                   <div className="container mt-5 w-100">
                       <div className="row d-flex w-100">
                           <div className="col-lg-6 col-xxl-4">
@@ -145,7 +145,7 @@ export default function Anime({lista}){
                   <h3>Type: {animes[2].type}</h3>
                   <h3>Episodes: {animes[2].episodes}</h3>
                   <h3>Start Date: {animes[2].start_date.slice(0,10)}</h3>
-                  <h3>End Date: {animes[2].end_date.slice(0,10)}</h3>
+                  <h3>End Date: {animes[2].end_date ? animes[0].end_date.slice(0,10) : null}</h3>
                   <div className="container mt-5 w-100">
                       <div className="row d-flex w-100">
                           <div className="col-lg-6 col-xxl-4">
